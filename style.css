@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap');
+
+:root{
+    --Dark-cyan: hsl(158, 36%, 37%);
+    --Cream: hsl(30, 38%, 92%);
+    --Very-dark-blue: hsl(212, 21%, 14%);
+    --Dark-grayish-blue: hsl(228, 12%, 48%);
+    --White: hsl(0, 0%, 100%);
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+button{display: block; width: 100%;}
+body{
+    background-color: var(--Cream);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    border-radius: 8px;
+    overflow: hidden;
+}
+.container .horo-img{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.container .content{
+    background-color: var(--White);
+    padding: 24px;
+}
+.container .content .title{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 0.485em;
+    color: var(--Dark-grayish-blue);
+}
+.container .content h1{
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 33px;
+    letter-spacing: 0.05em;
+    margin: 15px 0 0 0;
+}
+.container .content p{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 166.02%;
+    letter-spacing: 0.025em;
+    margin: 15px 0;
+    color: var(--Dark-grayish-blue);
+}
+.prices{
+    display: flex;
+    align-items: center;
+    gap: 19px;
+}
+.container .content .prices .current-price{
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 166.02%;
+    letter-spacing: -0.015em;
+    color: var(--Dark-cyan);
+}
+.container .content .prices .old-price{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 166.02%;
+    /* or 23px */
+    text-decoration: line-through;
+    color: var(--Dark-grayish-blue);
+    
+}
+.add-cart{
+    font-family: 'Montserrat', sans-serif;
+    padding-bottom: 12px;
+    padding-top: 12px;
+    background-color: var(--Dark-cyan);
+    border: none;
+    color: var(--White);
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 166.02%;
+    letter-spacing: 0.01em;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 11px;
+    transition: background .4s;
+}
+.add-cart:hover{
+    background-color: var(--Very-dark-blue);
+}
+
+/* font-family: 'Fraunces', serif;
+font-family: 'Montserrat', sans-serif;
+ */
+
+
+
+@media (min-width: 357px) {
+    .container{
+        max-width: 343px;
+        max-height: 611px;
+        display: grid;
+        grid-template-rows: 240px 1fr;
+    }
+    .container .horo-img{
+        background-image: url(./images/image-product-mobile.jpg);
+        max-width: 100%;
+        max-height: 240px;
+    }
+}
+@media (min-width: 1200px) {
+    .container{
+        max-width: 600px;
+        max-height: 450px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 450px;
+    }
+    .container .horo-img{
+        background-image: url(./images/image-product-desktop.jpg);
+        max-width: 300px;
+        max-height: 100%;
+    }
+    .container .content{
+        padding: 33px;
+    }
+    .container .content h1{
+        margin: 19px 0px;
+    }
+    .prices{
+        margin: 19px 0 15px 0;
+    }
+}
